@@ -1,0 +1,161 @@
+/* 1. Inbuilt sort
+    public static void main(String args[]) {
+        int[] arr = {23, 78, 3, 1, 8, 90, 34};
+        Arrays.sort(arr);
+        System.out.println("\nThe sorted array is: ");
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+    }
+
+
+     2. Bubble sort
+     public static void bubblesort(int arr[])
+     {
+         for(int turn=0;turn<arr.length-1;turn++)
+         {
+             for(int j=0;j<arr.length-1-turn; j++)
+             {
+                 if(arr[j]>arr[j+1])
+                 {
+                     int temp=arr[j];
+                     arr[j]=arr[j+1];
+                     arr[j+1]=temp;
+                 }
+             }
+         }
+     }
+     public static void printarr(int arr[])
+     {
+         for(int i=0;i<arr.length-1;i++)
+         {
+             System.out.print(arr[i]+ " ");
+         }
+         System.out.println(" ");
+     }
+
+
+     public static void main(String args[])
+     {
+         int arr[]={23,67,98,9,6,56,43,34,65};
+         bubblesort(arr);
+         printarr(arr);
+
+     }
+
+
+
+
+    // 3.selection sort
+    public static void selection_sort(int arr[])
+    {
+        for(int i=0;i<arr.length-1;i++)
+        {
+            int minpos=i;
+            for(int j=i+1;j<arr.length-1;j++)
+            {
+                if(arr[minpos]>arr[j])
+                {
+                    minpos=j;
+                }
+            }
+            int temp = arr[minpos];
+            arr[minpos]=arr[i];
+            arr[i]=temp;
+        }
+    }
+    public static void printarr(int arr[])
+    {
+        for(int i=0;i<arr.length;i++)
+        {
+            System.out.print(arr[i]+ " ");
+        }
+        System.out.println( );
+    }
+
+    public static void main(String args[])
+    {
+        int arr[]={12,4,78,8,9,14,26,78,90,82};
+        selection_sort(arr);
+        printarr(arr);
+
+    }
+ 
+    4. Insertionsort
+    public static void insertionsort(int arr[])
+    {
+        for(int i=1;i<arr.length;i++)
+        {
+            int curr=arr[i];
+            int prev=i-1;
+            while(prev>=0 && arr[prev]>curr)
+            {
+                arr[prev+1]=arr[prev];
+                prev--;
+            }
+            arr[prev+1]=curr;
+        }
+    }
+    public static void printarr(int arr[])
+    {
+        for(int i=0;i<arr.length;i++)
+        {
+            System.out.print(arr[i]+ " ");
+        }
+        System.out.println();
+    }
+    public static void main(String args[])
+    {
+        int arr[] = {12,2,45,3,4,5,7,9,78,90,1};
+        insertionsort(arr);
+        printarr(arr);
+
+    }
+
+
+    5. Counting sort
+    public static void countingsort(int arr[])
+    {
+        int largest=Integer.MIN_VALUE;
+        for(int i=0;i<arr.length;i++)
+        {
+            largest = Math.max(largest,arr[i]);
+        }
+        int count[] = new int[largest+1];
+        for(int i=0;i<arr.length;i++)
+        {
+            count[arr[i]]++;
+        }
+        int j=0;
+        for(int i=0;i<count.length;i++)
+        {
+            while(count[i]>0)
+            {
+                arr[j]=i;
+                j++;
+                count[i]--;
+            }
+        }
+    }
+    public static void printarr(int arr[])
+    {
+        for(int i=0;i<arr.length;i++)
+        {
+            System.out.print(arr[i]+ " ");
+        }
+        System.out.println();
+    }
+    public static void main(String args[])
+    {
+        int arr[]={1,45,6,7,89,23,45,76,8,9};
+        countingsort(arr);
+        printarr(arr);
+    }
+
+     */
+
+
+
+
+
+}
